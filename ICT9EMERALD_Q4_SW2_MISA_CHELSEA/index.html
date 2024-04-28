@@ -44,7 +44,7 @@
     button {
 
           background-color: lavender; 
-          min-width: 70px; 
+          min-width: 60px; 
           min-height: 10px;  
           color: black;
           padding: 15px;
@@ -73,6 +73,10 @@
     #num1, #num2 {
         font-family: 'Space Mono', monospace;
         font-size: 12px;
+    }
+
+    #display {
+        font-size: 30px;
     }
 
 
@@ -112,6 +116,8 @@
                   <button onclick="quotient()" type="submit" id="divide"> ÷ </button> 
 
                   <button onclick="remainder()" type="submit" id="remain"> R </button>
+
+                  <button onclick="power()" type="submit" id="remain"> ^ </button>
 
                  </div>
 
@@ -156,6 +162,14 @@
                        let remainder = parseInt(num1) % parseInt(num2); 
                        document.getElementById("display").innerHTML = "The remainder is " + remainder;       
                     }
+
+                    function power() { //function for power
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let power = parseInt(num1) ** parseInt(num2); 
+                       document.getElementById("display").innerHTML = num1 + " to the power of " + num2 + " is " + power;       
+                    }
+
                 </script>
               </div>
             </div>
