@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width-device-width,inital-scale=1">
+  <title> JAVA SW2 </title>
+
+  <!-- BS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style> 
+
+    body {
+        background-image:url("bg.png") ;
+        background-repeat: no-repeat;
+        background-position: fixed;
+        background-size: 100rem;
+    }
+
+    .calculator {
+        align-content: center;
+        margin-top:30px;
+        padding-top: 50px;
+    }
+
+    .cont {
+        background-color: lavenderblush;
+         border: 5px solid floralwhite;
+    }
+
+    h1 {
+        font-family: 'Anton', sans-serif;
+        font-style: italic; 
+        text-align: center;
+
+    }
+
+    button {
+
+          background-color: lavender; 
+          min-width: 70px; 
+          min-height: 10px;  
+          color: black;
+          padding: 15px;
+          text-align: center;
+          margin: 4px;
+          border: 2px solid white;
+    }
+
+    p {
+        font-family: 'Alegreya', serif;
+    }
+
+    .buttons {
+        display: flex;
+        font-weight: bold;
+
+    }
+
+    .answer {
+        border: 2px dashed white;
+        padding: 5px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #num1, #num2 {
+        font-family: 'Space Mono', monospace;
+        font-size: 12px;
+    }
+
+
+
+  </style>
+</head>
+
+    <body>
+        <div class="calculator mt-6 p-5 mb-5">
+            <div class="row justify-content-center">
+              <div class="cont col-md-7 pt-3 mt-5">
+                <h1>CALCULATIONS WITH PHIL</h1>
+              <div class="row d-flex">
+                <div class="col-md-5">
+                  <img src="phil dunphy.png" alt="Phil Dunphy Picture" width="300px">
+                </div>
+
+                <div class="col-md-6 mt-5 pt-5">
+                  <blockquote>
+                    <p>HI! I'm Phil. Let's do some calculations together!</p>
+                    <footer class="blockquote-footer"> Phil Dunphy / Click <a href="https://honestlyadoption.com/the-phil-dunphy-rules-of-fatherhood/"> Here </a> for more</footer>
+                </blockquote>
+
+                  <input type="number" id="num1" placeholder="Enter 1st number!">
+                  <input type="number" id="num2" placeholder="Enter 2nd number!"> <br> <br>
+
+                  <!-- buttons  -->
+
+                  <div class="buttons">
+
+                  <button onclick="plus()" type="submit" id="calc"> + </button> 
+
+                  <button onclick="multiply()" type="submit" id="prod"> x </button>
+
+                  <button onclick="difference()" type="submit" id="sub"> - </button> 
+
+                  <button onclick="quotient()" type="submit" id="divide"> ÷ </button> 
+
+                  <button onclick="remainder()" type="submit" id="remain"> R </button>
+
+                 </div>
+
+                 <!-- display -->
+
+                 <div class="answer">
+                    <p id="display"></p>
+                </div>
+
+                <script>
+                    function plus() { //function for addition
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let sum = parseInt(num1) + parseInt(num2); 
+                       document.getElementById("display").innerHTML = "The sum is " + sum;       
+                    }
+
+                    function multiply() { //function for multiplication
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let product = parseInt(num1) * parseInt(num2); 
+                       document.getElementById("display").innerHTML = "The product is " + product;       
+                    }
+
+                    function difference() { //function for subtraction
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let difference = parseInt(num1) - parseInt(num2); 
+                       document.getElementById("display").innerHTML = "The difference is " + difference;       
+                    }
+
+                    function quotient() { //function for division
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let quotient = parseInt(num1) / parseInt(num2); 
+                       document.getElementById("display").innerHTML = "The quotient is " + quotient;     
+                    }
+
+                    function remainder() { //function for remainder
+                       let num1 = parseInt(document.getElementById("num1").value);
+                       let num2 = parseInt(document.getElementById("num2").value);
+                       let remainder = parseInt(num1) % parseInt(num2); 
+                       document.getElementById("display").innerHTML = "The remainder is " + remainder;       
+                    }
+                </script>
+              </div>
+            </div>
+        </div>
+    </body>
+    </html>
+  </body>
+
+
+
